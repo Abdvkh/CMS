@@ -12,7 +12,7 @@ if(isset($_POST["Submit"])) {
 	}else{
 		//CODE FOR CHECKING USERNAME AND PASSWORD FROM DATABASE
 		global $ConnectingDB;
-		$sql = "SELECT * FROM admins username=:userName AND password=:password LIMIT 1";
+		$sql = "SELECT * FROM admins WHERE username=:userName AND password=:password LIMIT 1";
 		$stmt = $ConnectingDB->prepare($sql);
 		$stmt->bindValue(':userName',$UserName);
 		$stmt->bindValue(':password',$Password);
